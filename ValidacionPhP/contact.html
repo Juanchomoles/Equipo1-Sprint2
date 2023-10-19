@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>ClicCarz</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <main>
+        <article>
+            <form name="formulario" action="Validacion.php" method="post" novalidate="novalidate">
+                <div class="form-container"> <!-- Agregamos una clase para el div del formulario -->
+                    <h1>Registro de Usuario</h1>
+                   
+                    <div>
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" name="nombre" id="nombre" class="input">
+                    </div>
+                    <div>
+                        <label for="apellidos" >Apellidos:</label>
+                        <input type="text" name="apellidos" id="apellidos"  class="input">
+                    </div>
+                    <div>
+                        <label for="domicilio">Domicilio:</label>
+                        <input type="text" name="domicilio" id="domicilio" class="input">
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="text" name="email" id="email" class="input">
+                    </div>
+                    <div>
+                        <label for="contraseña">Contraseña:</label>
+                        <input type="password" name="contraseña" id="contraseña" class="input">
+                    </div>
+                    <div>
+                        <label for="phone">Phone:</label>
+                        <input type="tel" name="phone" id="phone" class="input">
+                    </div>
+                    <div>
+                        <label for="dni">DNI:</label>
+                        <input type="number" name="dni" id="dni" class="input">
+                        <label for="dniLetter"></label>
+                        <select id="dniLetter" name="dniLetter">
+                            <option value="" disabled selected>Letra</option>
+                            <option value="T">T</option>
+                            <option value="R">R</option>
+                            <option value="W">W</option>
+                            <option value="A">A</option>
+                            <option value="G">G</option>
+                            <option value="M">M</option>
+                            <option value="Y">Y</option>
+                            <option value="F">F</option>
+                            <option value="P">P</option>
+                            <option value="D">D</option>
+                            <option value="X">X</option>
+                            <option value="B">B</option>
+                            <option value="N">N</option>
+                            <option value="J">J</option>
+                            <option value="Z">Z</option>
+                            <option value="S">S</option>
+                            <option value="Q">Q</option>
+                            <option value="V">V</option>
+                            <option value="H">H</option>
+                            <option value="L">L</option>
+                            <option value="C">C</option>
+                            <option value="K">K</option>
+                            <option value="E">E</option>
+                        </select>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="submit" name="submit">Enviar formulario</button>
+                        <button type="reset" name="reset">Restablecer</button>
+                    </div>
+                </div>
+            </form>
+        </article>
+    </main>
+ <!--<script src="../js/validacio_Formulario.js"></script>-->
+</body>
+
+</html>
