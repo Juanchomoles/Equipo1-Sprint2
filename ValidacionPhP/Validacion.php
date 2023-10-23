@@ -1,6 +1,7 @@
 <?php
-
-require_once 'ValidarCliente.php';
+require 'Clases/Cliente.php';
+require 'Clases/ValidarParticular.php';
+require 'Clases/Particular.php';
 
 
 $name = $_POST['nombre'] ?? '';
@@ -12,15 +13,11 @@ $dni = $_POST['dni']?? 0;
 $dniLetter = $_POST['dniLetter']?? '';
 $password = $_POST['contraseña']?? '';
 
-$particular = new ValidarCliente(1, $name, $lastName, $residence, $dni,$dniLetter, $phone, $email, $password);
+$clienteP = new Particular(1, $name, $lastName, $residence, $dni, $phone, $email, $password);
+$particular = new ValidarParticular();
 
-$errorName      = $particular->validateName($name);
-$errorLastName  = $particular->validateName($lastName);
-$errorResidence = $particular->validateName($residence);
-$errorEmail     = $particular->validateEmail();
-$errorPhone     = $particular->validatePhone();
-$errorDNI       = $particular->validateDNI();
-$errorPassword  = $particular->validatePassword();
+$result = $particular->validateALL($clienteP);
+
 
 ?>
 
@@ -31,13 +28,13 @@ $errorPassword  = $particular->validatePassword();
     <body>
         <h2>Validación</h2>
     <ul>
-        <li>Nombre: <?php echo $errorName; ?></li>
-        <li>Apellido: <?php echo $errorLastName; ?></li>
-        <li>Domicilio: <?php echo $errorResidence; ?></li>
-        <li>Email : <?php echo $errorEmail; ?></li>
-        <li>Contraseña: <?php echo $errorPassword; ?></li>
-        <li>Telefono: <?php echo $errorPhone; ?></li>
-        <li>DNI: <?php echo $errorDNI; ?></li>
+        <li>Nombre: <?php echo $result[0]; ?></li>
+        <li>Apellido: <?php echo $result[1]; ?></li>
+        <li>Domicilio: <?php echo $result[2]; ?></li>
+        <li>Email : <?php echo $result[3]; ?></li>
+        <li>Contraseña: <?php echo $result[4]; ?></li>
+        <li>Telefono: <?php echo $result[5]; ?></li>
+        <li>DNI: <?php echo $result[6]; ?></li>
     </ul>
     </body>
 </html>
